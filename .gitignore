@@ -1,0 +1,4 @@
+.venv/
+detectron2/
+__pycache__/
+*.pyc
