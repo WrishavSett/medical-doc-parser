@@ -12,16 +12,19 @@ image1 = Image.open(f"./src/tabledata.png")
 image2 = Image.open(f"./src/textdata.png")
 
 # 3. Initialize your prompt
-prompt = """
+prompt="""
 Read the image.
-Return the field data in JSON format.
+Extract all the data from it and give a JSON response.
 """
 
 # 4. Hit Google AI Studio API
 def response_gen(image, prompt):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=[image, prompt]
+        contents=[
+            image,
+            prompt
+        ]
     )
 
     return response
